@@ -1,0 +1,12 @@
+<main>
+  <h1>Workations</h1>
+
+  <!-- error() first: reading value() while the resource is in error throws. -->
+  @if (workations.error()) {
+    <p class="error" role="alert">Could not load the workations.</p>
+  } @else if (workations.isLoading()) {
+    <p>Loading…</p>
+  } @else {
+    <app-workations-table [workations]="workations.value()" />
+  }
+</main>
