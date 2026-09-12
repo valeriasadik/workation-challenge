@@ -1,0 +1,14 @@
+.country {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.flag {
+  width: 1.5rem;
+  height: 1.125rem;
+  border-radius: 2px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
