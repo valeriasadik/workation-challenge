@@ -1,0 +1,59 @@
+.scroller {
+  overflow-x: auto;
+  border: 1px solid #e4e7ec;
+  border-radius: 0.5rem;
+}
+
+.workations {
+  width: 100%;
+  min-width: 48rem;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+th,
+td {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Column dividers across the whole table, as in the reference. */
+th + th,
+td + td {
+  border-left: 1px solid #e4e7ec;
+}
+
+thead {
+  background: #f2f4f8;
+}
+
+thead th {
+  color: #344054;
+  font-weight: 600;
+}
+
+thead button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+tbody td {
+  border-top: 1px solid #eaecf0;
+  color: #475467;
+}
+
+tbody td:first-child {
+  color: #1f2937;
+}
+
+tbody tr:hover {
+  background: #edf3f3;
+}

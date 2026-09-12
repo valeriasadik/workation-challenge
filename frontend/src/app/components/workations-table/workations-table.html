@@ -1,0 +1,34 @@
+<!-- Seven columns cannot reflow on a phone: the table scrolls inside its box instead. -->
+<div class="scroller">
+  <table class="workations">
+    <thead>
+      <tr>
+        @for (header of headers(); track header.key) {
+          <th scope="col" [attr.aria-sort]="header.ariaSort">
+            <button type="button" (click)="sortBy(header.key)">
+              {{ header.label }}
+              <app-sort-indicator
+                [active]="header.active"
+                [descending]="header.descending"
+              />
+            </button>
+          </th>
+        }
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (workation of rows(); track workation.id) {
+        <tr>
+          <td>{{ workation.employee }}</td>
+          <td><app-country-cell [country]="workation.origin" /></td>
+          <td><app-country-cell [country]="workation.destination" /></td>
+          <td>{{ workation.start | date: 'dd/MM/yyyy' : 'UTC' }}</td>
+          <td>{{ workation.end | date: 'dd/MM/yyyy' : 'UTC' }}</td>
+          <td>{{ workation.workingDays }}</td>
+          <td><app-risk-cell [risk]="workation.risk" /></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
