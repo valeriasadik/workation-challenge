@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: workation
+  datasource:
+    url: jdbc:h2:mem:workations;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 500
+        order_inserts: true
+  h2:
+    console:
+      enabled: true
+  mvc:
+    problemdetails:
+      enabled: true
+
+app:
+  csv:
+    location: classpath:workations.csv
+    batch-size: 500
+  cors:
+    allowed-origins: http://localhost:4200
